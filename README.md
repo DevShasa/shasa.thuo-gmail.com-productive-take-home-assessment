@@ -1,30 +1,25 @@
-# React + TypeScript + Vite
+## shasa.thuo@gmail.com asessment for Productive Software
+The asessment is a react app that lets users login and access hompage and profile page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Technologies uses 
+- react
+- redux toolkit
+- mirage js(for the mock server)
+- faker js
+- react-router
+- typescript
 
-Currently, two official plugins are available:
+## User Flow
+log in with any credential, you will then be redirected to the homepage which shows info from various users, you can switch between homepage and profile page using the sidebar
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Screenshots
+Log in Page
+![Log in page](./screenshots/login%20one.png)
+Homepage
+![Log in page](./screenshots/homepage.png)
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Api design
+Login credentials are sent to the server which responds with api key and secret key, these are stored and used to authenticate any subsequent api requests
+![Alt text](./screenshots/image.png)

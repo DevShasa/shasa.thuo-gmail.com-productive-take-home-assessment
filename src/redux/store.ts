@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "./UserSlice"
+import homepageReducer from "./HomepageSlice"
 
 export const store = configureStore({
     reducer:{
-        user:userReducer
+        user:userReducer,
+        homepage: homepageReducer
     }
 })
 

@@ -13,7 +13,7 @@ const initialState ={
     }
 }
 
-// type InitialStateType = typeof initialState
+export type UserType = typeof initialState
 
 export const logInUser = createAsyncThunk("user/loInuser",async (user:IuserLogin, thunkApi) => {
     try {

@@ -1,24 +1,39 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet } from "react-router-dom";
+import { useAppDispatch } from "../utils/reduxHooks";
+import { fetchHomepageData } from "../redux/HomepageSlice";
+import { useEffect } from "react";
+import { MdFace } from "react-icons/md";
+import { IoHome } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
-type Props = {}
+const MainLayout = () => {
 
-const MainLayout = (props: Props) => {
-  return (
-    <div className='layout'>
-        <div className='layout_sidebar'>
-            Sidebar
-        </div>
-        <div className='layout_main'>
-            <div className='layout_main_mavbar'>
-                Navbar
-            </div>
-            <div className='layout_main_contents'>
-                <Outlet />
-            </div>
-        </div>
-    </div>
-  )
-}
+    const dispatch = useAppDispatch()
 
-export default MainLayout
+    useEffect(()=>{
+        dispatch(fetchHomepageData())
+    },[])
+
+    const navigate = useNavigate()
+	return (
+			<div className="layout">
+				<div className="layout_sidebar">
+                    <div className="layout_sidebar_container">
+                        <button onClick={()=> navigate("/homepage")}>
+                            <MdFace />
+                            Home
+                        </button>
+                        <button  onClick={()=> navigate("/profile")}>
+                            <IoHome />
+                            Profile
+                        </button>
+                    </div>
+                </div>
+				<div className="layout_main">
+					<Outlet />
+				</div>
+			</div>
+	);
+};
+
+export default MainLayout;

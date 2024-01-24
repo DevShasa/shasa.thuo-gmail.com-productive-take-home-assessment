@@ -1,10 +1,12 @@
-import React from 'react'
 
-type Props = {}
+import HeaderCard from "../components/HeaderCard";
+import { useAppSelector } from "../utils/reduxHooks";
+function Profile() {
+    const { about, userRole, avatar, userName } = useAppSelector( (state) => state.homepage );
 
-function Profile({}: Props) {
   return (
-    <div>Profile</div>
+    <HeaderCard {...{ about, userRole, avatar, userName }} />
+
   )
 }
 
