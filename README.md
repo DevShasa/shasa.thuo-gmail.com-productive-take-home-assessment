@@ -1,6 +1,10 @@
 ## shasa.thuo@gmail.com asessment for Productive Software
 The asessment is a react app that lets users login and access hompage and profile page
 
+- clone the repository and first install packages using the command `npm  i`
+- after installing packages  start the app using the command `npm run dev`
+
+
 ### Technologies uses 
 - react
 - redux toolkit
