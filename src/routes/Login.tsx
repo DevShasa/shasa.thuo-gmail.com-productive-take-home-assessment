@@ -1,8 +1,25 @@
 import { CgProfile } from "react-icons/cg";
 import { MdLockOpen } from "react-icons/md";
-
+import { useAppDispatch } from "../utils/reduxHooks";
+import { useState } from "react";
+import { logInUser } from "../redux/UserSlice";
+import toast,  {Toaster}  from "react-hot-toast";
 
 function Login() {
+
+    const dispatch = useAppDispatch()
+    const [password, setPassword] = useState("")
+    const [email, setEmail] = useState("")
+
+    function onSubmit(){
+        if(!password || !email){
+            toast.error("Inputs are empty")
+            console.log("Inputs empty")
+        }else{
+            dispatch(logInUser({email, password}))
+        }
+    }
+
   return (
     <div className="login_page_container">
         <div className="login_page_contents">
@@ -18,23 +35,29 @@ function Login() {
                         <input 
                             type="text"
                             placeholder="Enter Email"
+                            value={email}
+                            onChange={(e)=> setEmail(e.target.value)}
                         />
                     </div>
                     <div className="login_page_input">
                         <MdLockOpen size={"25px"} color="blue" />
                         <input 
-                            type="text"
-                            placeholder="Enter Email"
+                            type="password"
+                            placeholder="Enter password"
+                            value={password}
+                            onChange={(e)=> setPassword(e.target.value)}
+
                         />
                     </div>
                     <div className="login_page_button">
-                        <button>
+                        <button onClick={onSubmit}>
                             LOGIN
                         </button>
                     </div>
                 </div>
             </div>
         </div>
+        <Toaster />
     </div>
   )
 }
