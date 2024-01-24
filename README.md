@@ -5,7 +5,7 @@ The asessment is a react app that lets users login and access hompage and profil
 - after installing packages  start the app using the command `npm run dev`
 
 
-### Technologies uses 
+### Technologies used
 - react
 - redux toolkit
 - mirage js(for the mock server)

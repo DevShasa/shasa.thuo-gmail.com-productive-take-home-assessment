@@ -21,7 +21,6 @@
 }
 .layout_main{
   flex: 1;
-  /* border: 1px solid red; */
   border-left: 1px solid rgb(238, 238, 238);
   height: fit-content;
 }
@@ -32,9 +31,7 @@
 
 }
 
-.header_contents{
-  /* width: 70%; */
-}
+
 .header_contents>p{
   font-size: large;
   color:rgb(123, 129, 136);
@@ -82,7 +79,6 @@
   padding: 10px;
   cursor: pointer;
   padding-left: 80px;
-  /* border-bottom: 1px solid rgb(122, 122, 243); */
   color: lightslategray;
   
 }
@@ -100,7 +96,6 @@
 
 .login_page_contents{
   width: 1000px;
-  /* border: 1px solid red; */
   border-radius: 20px;
   display: flex;
   height: 80vh;
@@ -144,7 +139,6 @@
   font-size: 20px;
 }
 .login_page_input{
-  /* border: 1px solid red; */
   margin-top: 20px;
   display: flex;
   align-items: center;
