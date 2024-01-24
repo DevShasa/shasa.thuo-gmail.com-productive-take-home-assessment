@@ -8,3 +8,100 @@
 * {margin: 0 }
 
 * { box-sizing: border-box; min-width: 0; min-height: 0; }
+
+
+.login_page_container{
+  height: 100vh;
+  display: grid;
+  place-items:center;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);
+}
+.login_page_contents{
+  width: 1000px;
+  /* border: 1px solid red; */
+  border-radius: 20px;
+  display: flex;
+  height: 80vh;
+}
+.login_page_welcome_banner{
+  flex: 3;
+  background-image: url(../public/login.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: fill;
+  background-size: 100% 100%;
+  padding: 50px;
+}
+
+.login_page_welcome_banner > p{
+  color: white;
+}
+
+.login_page_welcome_header{
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.login_page_welcome_message{
+  font-size: 18px;
+  text-shadow:  1px 1px 2px rgb(0, 0, 0);
+}
+
+.login_page_input_container{
+  flex: 2;
+  background-color: white;
+  padding: 50px;
+  display: grid;
+  place-items: center;
+}
+
+.login_page_input{
+  /* border: 1px solid red; */
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(226, 226, 226);
+  padding: 5px 10px 5px 10px;
+  border-radius: 15px;
+}
+
+.login_page_input > input{
+  border: none;
+  outline: none;
+  background-color: rgb(226, 226, 226);
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+.login_page_button{
+  text-align: center;
+}
+
+.login_page_button > button{
+  outline: none;
+  border: none;
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 15px;
+  cursor: pointer;
+  background: rgb(2,0,36);
+  background: linear-gradient(-90deg, rgb(12, 6, 136) 0%, rgba(9,9,121,1) 0%, rgb(1, 129, 155) 100%);
+  color: white;
+  font-weight: bold;
+}
+.login_page_button > button:hover{
+  background: rgb(2,0,36);
+}
+
+@media screen and (max-width: 1000px){
+  .login_page_welcome_banner{
+    display: none;
+  }
+  .login_page_contents{
+    width: 300px;
+  }
+
+}

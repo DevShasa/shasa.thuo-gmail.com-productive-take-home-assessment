@@ -4,14 +4,23 @@ import Profile from "./routes/Profile"
 import Homepage from "./routes/Homepage"
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 import MainLayout from "./Layout/MainLayout"
+import {Toaster} from "react-hot-toast"
+import { useAppSelector } from "./utils/reduxHooks"
 
 function App() {
+
+  const user = useAppSelector((store)=> store.user) 
+
+  console.log("USERDATA --->", user)
+
+  if(!user.userEmail){
+    return <Login />
+  }
 
   return (
       <div className="app">
           <BrowserRouter>
-              <Routes>\
-                {/* {loggedin then mainlayout if not then Login} */}
+              <Routes>
                   <Route element={<MainLayout />}>
                       <Route path="/" element={<Navigate to="/homepage" />}/>
                       <Route path="/homepage" element={<Homepage />}/>
@@ -19,6 +28,7 @@ function App() {
                   </Route>
               </Routes>
           </BrowserRouter>
+          <Toaster />
       </div>
   )
 }
